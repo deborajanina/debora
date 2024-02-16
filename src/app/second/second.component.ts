@@ -21,4 +21,22 @@ export class SecondComponent {
     return this.counter;
   }
 
+  name: string = "";
+
+  isDisabled: boolean = true;
+
+  onInput(event: Event) {
+    this.name = (<HTMLInputElement>event.target).value;
+    if (this.name == "") {
+      this.isDisabled = true;
+    }
+    else {
+      this.isDisabled = false;
+    }
+  }
+
+  clicked(): void {
+    this.name = "";
+  }
+
 }
