@@ -38,13 +38,9 @@ export class SecondComponent {
     this.name = "";
   }
 
-  //taskName: string = "";
-
   allTasks: string[] = ["This is 1 task", "This is 2 task", "This is 3 task", "This is 4 task", "This is 5 task"];
 
   newTask: string = "";
-
-  //isVisible: boolean = false;
 
   addTask(){
     console.log(this.newTask);    
@@ -53,7 +49,6 @@ export class SecondComponent {
   add() {
     if(this.newTask) {
     this.allTasks.push(this.newTask);
-    //this.isVisible = true;
     }
   }
 }
