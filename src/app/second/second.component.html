@@ -21,14 +21,33 @@
         </div>
 
         <br>
-        <br>
         <p>2-way binding</p>
         <label>Type here: </label>
 
         <input class="form-control" type="text" [(ngModel)]="name" (input)="onInput($event)">
         <p>{{name}}</p>
         <button [disabled]="isDisabled" class="btn btn-warning" type="button" (click)="clicked()">Reset</button>
+        <hr>
 
+        <!--<div *ngFor="let taskName of allTasks; let i=index">
+            {{taskName}}, at index {{i}}.
+        </div>-->
+
+        <ul *ngFor="let taskName of allTasks; let i=index">
+            <li [class.myColor]="i > 5">{{taskName}}, at index {{i}}.</li>
+        </ul>
+
+        <label>Add your new task here: </label>
+        <input type="text" [(ngModel)]="newTask" (change)="addTask()">
+
+        <button type="button" class="btn btn-danger" (click)="add()">Add task</button>
+
+       <!-- <ng-container *ngIf="isVisible">
+            
+            <div *ngFor="let taskName of allTasks; let i=index" [class.myColor]="i > 5">
+                {{taskName}}, at index {{i}}.
+            </div>
+        </ng-container>-->
     </div>
 </body>
 
